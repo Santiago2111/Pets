@@ -1,38 +1,59 @@
-<?php
-// Conexión a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "pets";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pets | List Users</title>
+  <link rel="icon" type="image/png" href="../../front/images/pets.png">
+  <style>
+   body {
+      background-image: url('../../front/images/background.avif');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+   }
+</style>
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-  die("Conexión fallida: " . $conn->connect_error);
-}
-
-// Selección de datos de la tabla "users"
-$sql = "SELECT * FROM users";
-$result = $conn->query($sql);
-
-// Generación de la tabla HTML
-if ($result->num_rows > 0) {
-  echo "<table>";
-  echo "<tr><th>First name</th><th>Last name</th><th>Numer id</th><th>address</th></tr><tr><th>Cellphone</th><th>email</th><th>password</th></tr>";
-  while($row = $result->fetch_assoc()) {
-    echo "<tr>";
-    echo "<td>" . $row["first_name"] . "</td>";
-    echo "<td>" . $row["last_name"] . "</td>";
-    echo "<td>" . $row["number_id"] . "</td>";
-    echo "<td>" . $row["address"] . "</td>";
-    echo "<td>" . $row["cellphone"] . "</td>";
-    echo "<td>" . $row["email"] . "</td>";
-    echo "<td>" . $row["password"] . "</td>";
-    echo "</tr>";
-  }
-  echo "</table>";
-} else {
-  echo "No se encontraron resultados.";
-}
-
-$conn->close();
-?>
+</head>
+<body>
+  <table border="5" align="center">
+    <tr><th colspan="7">List all users</th></tr>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Identification</th>
+      <th>Address</th>
+      <th>Cellphone</th>
+      <th>Email</th>
+      <th>Settings</th>
+    </tr>
+    <?php
+    include("../config/connectionDB.php");
+    $sql="SELECT * FROM users";
+    $result = $conn->query($sql);
+    if($result->num_rows > 0){
+      while($row = $result->fetch_assoc()){
+        echo "<tr>
+        <th>".$row['first_name']."</th>
+        <th>".$row['last_name']."</th>
+        <th>".$row['number_id']."</th>
+        <th>".$row['address']."</th>
+        <th>".$row['cellphone']."</th>
+        <th>".$row['email']."</th>
+        <td>
+          <a href='http://localhost/Pets/back/src/delete_user.php?userId=".$row['id']."'>
+            <img src='../../front/icons/delete.png' width='40'></a>&nbsp;&nbsp;
+          <a href='http://localhost/Pets/back/src/edit_user.php?userId=".$row['id']."'>
+            <img src='../../front/icons/update.png' width='40'></a>
+        </td>
+        </tr>";
+      }  
+    }else{
+      echo "No data found";
+    }
+    ?>
+    </table>
+</body>
+</html>
