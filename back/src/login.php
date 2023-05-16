@@ -11,6 +11,7 @@
         //echo "The user exists";
         header("Location:http://127.0.0.1/pets/front/src/home.html");
     }else{
-        echo "The user doesn't exist or ivalid data";
+        header("Location:http://127.0.0.1/pets/front/src/user doesn't exist.html");
+        //echo "The user doesn't exist or ivalid data";
     }
 ?>

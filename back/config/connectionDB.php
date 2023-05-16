@@ -11,7 +11,7 @@
     //Check Connection
     if($conn->connect_error){
         echo "Connection Failed: ".$conn->connection_error;
-    }else{
-        echo "Conecction Succesfuly";
     }
+    ob_start(); // Capturar el contenido de salida
+    ob_end_clean(); // Limpiar el contenido de salida
 ?>

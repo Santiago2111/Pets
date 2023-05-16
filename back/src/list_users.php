@@ -50,10 +50,12 @@
         </td>
         </tr>";
       }  
-    }else{
-      echo "No data found";
     }
+    ob_start(); // Capturar el contenido de salida
+    ob_end_clean(); // Limpiar el contenido de salida
     ?>
     </table>
+    <br>
+    <center><a href="http://127.0.0.1/pets/">Volver a la página principal</a></center>
 </body>
 </html>
