@@ -43,9 +43,9 @@
         <th>".$row['cellphone']."</th>
         <th>".$row['email']."</th>
         <td>
-          <a href='http://localhost/Pets/back/src/delete_user.php?userId=".$row['id']."'>
+          <a href='http://127.0.0.1/Pets/back/src/delete_user.php?userId=".$row['id']."'>
             <img src='../../front/icons/delete.png' width='40'></a>&nbsp;&nbsp;
-          <a href='http://localhost/Pets/back/src/edit_user.php?userId=".$row['id']."'>
+          <a href='http://127.0.0.1/Pets/back/src/edit_user.php?userId=".$row['id']."'>
             <img src='../../front/icons/update.png' width='40'></a>
         </td>
         </tr>";
