@@ -1,5 +1,6 @@
 <?php
     include("../config/connectionDB.php");
+    $userId = $_POST['uId'];
     $fname = $_POST['f_name'];
     $lname = $_POST['l_name'];
     $idnum = $_POST['id_num'];
@@ -13,7 +14,7 @@
     address = '$address',
     cellphone = '$cel_phone',
     email = '$email'
-    WHERE number_id = '$idnum'";
+    WHERE id = '$userId'";
 
     if($conn -> query($sql) === TRUE){
         echo "<script>alert('User has been updated')</script>";

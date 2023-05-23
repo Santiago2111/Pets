@@ -56,6 +56,6 @@
     ?>
     </table>
     <br>
-    <center><a href="http://127.0.0.1/pets/">Volver a la página principal</a></center>
+    <center><button onclick="location.href='http://127.0.0.1/pets/'">Home</button></center></center>
 </body>
 </html>

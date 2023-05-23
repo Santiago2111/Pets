@@ -8,7 +8,7 @@
     <link rel ="icon" type="image/x-icon" href="../images/pets.png">
     <link rel="stylesheet" type="text/css" href="../estilos.css">
     <style>
-        body{
+        body {
             background-image: url("../images/background.avif");
             background-position: center;
             background-repeat: no-repeat;
@@ -18,13 +18,17 @@
     </style>
 </head>
 <body>
-    <form name="loginForm" action="http://127.0.0.1/pets/back/src/login.php" method="POST">
-    <center><img src="../images/is.png" width="100"></center><br>
-    <center><label>Username </label><input type="text" name="email" required><br><br>
-    <label>Password </label><input type="password" name="passwd" required><br><br>
-    <a href="create_user.html" target="_blank">Sign up</a><br>
-    <a href="forgot_password.html" target="_blank">Forgot your password?</a><br><br>
-    <button onclick="location.href='http://127.0.0.1/pets/front/src//home.html'">Login </button></center>
+    <form id="loginForm" name="loginForm" action="http://127.0.0.1/pets/back/src/login.php" method="POST">
+        <center><img src="../images/is.png" width="100"></center><br>
+        <center>
+            <label>Username</label>
+            <input type="text" name="email" required><br><br>
+            <label>Password</label>
+            <input type="password" name="passwd" required><br><br>
+            <a href="http://127.0.0.1/pets/front/src/create_user.html">Sign up</a><br>
+            <a href="http://127.0.0.1/pets/front/src/forgot_password.html">Forgot your password?</a><br><br>
+            <button type="submit">Login</button>
+        </center>
     </form>
 </body>
 </html>
